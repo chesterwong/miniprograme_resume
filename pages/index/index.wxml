@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<navigation-bar title="Chester的小程序演示" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<view class="page">
+  <!-- Header: 轮播 -->
+  <view class="header">
+    <swiper class="banner-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" circular="{{true}}">
+      <swiper-item wx:for="{{bannerList}}" wx:key="url">
+        <image class="banner-img" src="{{item.url}}" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- Content: Tab -->
+  <view class="content">
+    <view class="tabs">
+      <view class="tab-item {{activeTab === 0 ? 'active' : ''}}" data-index="0" bindtap="onTabTap">Front End</view>
+      <view class="tab-item {{activeTab === 1 ? 'active' : ''}}" data-index="1" bindtap="onTabTap">Back End</view>
+      <view class="tab-item {{activeTab === 2 ? 'active' : ''}}" data-index="2" bindtap="onTabTap">SQL</view>
+    </view>
+    <view class="tab-panels">
+      <view class="tab-panel" wx:if="{{activeTab === 0}}">
+        <text class="panel-title">Front End</text>
+        <text class="panel-desc">前端技术：HTML / CSS / JavaScript / Vue / React / 小程序 等</text>
+      </view>
+      <view class="tab-panel" wx:if="{{activeTab === 1}}">
+        <text class="panel-title">Back End</text>
+        <text class="panel-desc">后端技术：Node.js / Java / Python / Go / 微服务 等</text>
+      </view>
+      <view class="tab-panel" wx:if="{{activeTab === 2}}">
+        <text class="panel-title">SQL</text>
+        <text class="panel-desc">数据库：MySQL / PostgreSQL / Redis / MongoDB 等</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Bottom: 菜单 -->
+  <view class="bottom-menu">
+    <view class="menu-item" data-path="/pages/profile/profile" bindtap="onMenuTap">
+      <text class="menu-icon">👤</text>
+      <text class="menu-label">个人介绍</text>
+    </view>
+    <view class="menu-item" data-path="/pages/works/works" bindtap="onMenuTap">
+      <text class="menu-icon">📂</text>
+      <text class="menu-label">作品分享</text>
+    </view>
+    <view class="menu-item" data-path="/pages/resume/resume" bindtap="onMenuTap">
+      <text class="menu-icon">📋</text>
+      <text class="menu-label">学习履历</text>
+    </view>
+    <view class="menu-item" data-path="/pages/user/user" bindtap="onMenuTap">
+      <text class="menu-icon">⚙️</text>
+      <text class="menu-label">用户中心</text>
+    </view>
+  </view>
+</view>

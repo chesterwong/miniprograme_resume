@@ -1,0 +1,5 @@
+<navigation-bar title="用户中心" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <text class="title">用户中心</text>
+  <text class="desc">个人设置、账号与偏好管理。</text>
+</view>

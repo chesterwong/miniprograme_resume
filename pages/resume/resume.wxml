@@ -1,0 +1,5 @@
+<navigation-bar title="学习履历" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <text class="title">学习履历</text>
+  <text class="desc">记录 Chester 的学习经历、证书与成长轨迹。</text>
+</view>

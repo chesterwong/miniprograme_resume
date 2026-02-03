@@ -1,0 +1,5 @@
+<navigation-bar title="个人介绍" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <text class="title">个人介绍</text>
+  <text class="desc">这里是 Chester 的个人介绍，可在此展示简介、技能与联系方式等。</text>
+</view>

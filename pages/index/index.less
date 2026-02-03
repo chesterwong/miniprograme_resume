@@ -1,0 +1,116 @@
+/**index.less**/
+page {
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 120rpx;
+}
+
+/* Header 轮播 */
+.header {
+  width: 100%;
+  background: #000;
+}
+
+.banner-swiper {
+  width: 100%;
+  height: 360rpx;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Content Tab */
+.content {
+  flex: 1;
+  margin: 24rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 28rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.tab-item.active {
+  color: #07c160;
+  font-weight: 600;
+  border-bottom: 4rpx solid #07c160;
+  margin-bottom: -1rpx;
+}
+
+.tab-panels {
+  padding: 32rpx;
+  min-height: 240rpx;
+}
+
+.tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.panel-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.panel-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Bottom 菜单 */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 -2rpx 16rpx rgba(0, 0, 0, 0.08);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  padding: 16rpx 24rpx;
+  flex: 1;
+}
+
+.menu-icon {
+  font-size: 40rpx;
+}
+
+.menu-label {
+  font-size: 22rpx;
+  color: #333;
+}

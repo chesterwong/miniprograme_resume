@@ -1,0 +1,5 @@
+<navigation-bar title="作品分享" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <text class="title">作品分享</text>
+  <text class="desc">展示 Chester 的项目与作品，可后续接入列表或详情页。</text>
+</view>
