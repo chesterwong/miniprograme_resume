@@ -1,4 +1,3 @@
-/**index.less**/
 page {
   height: 100vh;
   background: #f0f2f5;

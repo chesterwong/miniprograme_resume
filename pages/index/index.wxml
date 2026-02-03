@@ -1,12 +1,23 @@
 <!--index.wxml-->
-<navigation-bar title="Chester的小程序演示" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="Chester's resume" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 
 <view class="page">
   <!-- Header: 轮播 -->
   <view class="header">
-    <swiper class="banner-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" circular="{{true}}">
+    <swiper
+      class="banner-swiper"
+      indicator-dots="{{true}}"
+      indicator-color="rgba(255,255,255,0.4)"
+      indicator-active-color="#fff"
+      autoplay="{{true}}"
+      interval="{{4000}}"
+      circular="{{true}}"
+      duration="{{300}}"
+    >
       <swiper-item wx:for="{{bannerList}}" wx:key="url">
-        <image class="banner-img" src="{{item.url}}" mode="aspectFill" />
+        <view class="banner-item">
+          <image class="banner-img" src="{{item.url}}" mode="aspectFill" />
+        </view>
       </swiper-item>
     </swiper>
   </view>
