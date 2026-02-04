@@ -1,7 +1,7 @@
 <!--index.wxml-->
-<navigation-bar title="Chester's resume" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="Chester's resume" back="{{false}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : (theme === 'mint' ? '#fff' : '#FFF')}}"></navigation-bar>
 
-<view class="page">
+<view class="page theme-{{theme}}">
   <!-- Header: 轮播 -->
   <view class="header">
     <swiper
@@ -32,15 +32,30 @@
     <view class="tab-panels">
       <view class="tab-panel" wx:if="{{activeTab === 0}}">
         <text class="panel-title">Front End</text>
-        <text class="panel-desc">前端技术：HTML / CSS / JavaScript / Vue / React / 小程序 等</text>
+        <view class="skill-list">
+          <view class="skill-item" wx:for="{{frontEndItems}}" wx:key="*this">
+            <text class="skill-dot">·</text>
+            <text class="skill-text">{{item}}</text>
+          </view>
+        </view>
       </view>
       <view class="tab-panel" wx:if="{{activeTab === 1}}">
         <text class="panel-title">Back End</text>
-        <text class="panel-desc">后端技术：Node.js / Java / Python / Go / 微服务 等</text>
+        <view class="skill-list">
+          <view class="skill-item" wx:for="{{backEndItems}}" wx:key="*this">
+            <text class="skill-dot">·</text>
+            <text class="skill-text">{{item}}</text>
+          </view>
+        </view>
       </view>
       <view class="tab-panel" wx:if="{{activeTab === 2}}">
         <text class="panel-title">SQL</text>
-        <text class="panel-desc">数据库：MySQL / PostgreSQL / Redis / MongoDB 等</text>
+        <view class="skill-list">
+          <view class="skill-item" wx:for="{{sqlItems}}" wx:key="*this">
+            <text class="skill-dot">·</text>
+            <text class="skill-text">{{item}}</text>
+          </view>
+        </view>
       </view>
     </view>
   </view>

@@ -1,0 +1,165 @@
+/* 用户中心 - 多皮肤 */
+.container {
+  min-height: 100vh;
+  padding: 24rpx 32rpx 56rpx;
+}
+
+/* 默认皮肤 */
+.theme-default .container { background: #f0f2f5; }
+.theme-default .user-block,
+.theme-default .section,
+.theme-default .menu-list { background: #fff; color: #333; }
+.theme-default .section-title,
+.theme-default .user-name { color: #333; }
+.theme-default .user-desc,
+.theme-default .theme-desc,
+.theme-default .menu-label { color: #666; }
+.theme-default .theme-option.active { border-color: #07c160; color: #07c160; }
+.theme-default .theme-option { border: 2rpx solid #eee; }
+.theme-default .version { color: #999; }
+
+/* 深色皮肤 */
+.theme-dark .container { background: #1a1a1a; }
+.theme-dark .user-block,
+.theme-dark .section,
+.theme-dark .menu-list { background: #2d2d2d; color: #e8e8e8; }
+.theme-dark .section-title,
+.theme-dark .user-name { color: #fff; }
+.theme-dark .user-desc,
+.theme-dark .theme-desc,
+.theme-dark .menu-label { color: #b0b0b0; }
+.theme-dark .theme-option { border: 2rpx solid #444; background: #252525; }
+.theme-dark .theme-option.active { border-color: #5ebaa8; color: #7ec8b5; }
+.theme-dark .menu-item { border-color: #3d3d3d; }
+.theme-dark .version { color: #666; }
+.theme-dark .user-arrow,
+.theme-dark .menu-arrow { color: #888; }
+
+/* 清新皮肤 */
+.theme-mint .container { background: #f2f8f6; }
+.theme-mint .user-block,
+.theme-mint .section,
+.theme-mint .menu-list { background: #fff; color: #2d4a44; box-shadow: 0 8rpx 32rpx rgba(94, 186, 168, 0.08); }
+.theme-mint .section-title,
+.theme-mint .user-name { color: #2d4a44; }
+.theme-mint .user-desc,
+.theme-mint .theme-desc,
+.theme-mint .menu-label { color: #5a726c; }
+.theme-mint .theme-option { border: 2rpx solid #c8e4dc; background: #fff; }
+.theme-mint .theme-option.active { border-color: #7ec8b5; color: #4a9b88; background: rgba(126, 200, 181, 0.08); }
+.theme-mint .version { color: #9bb5ad; }
+.theme-mint .user-arrow,
+.theme-mint .menu-arrow { color: #7ec8b5; }
+
+/* 通用块 */
+.user-block {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 28rpx;
+  border-radius: 20rpx;
+  margin-bottom: 28rpx;
+}
+
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background: #eee;
+}
+
+.theme-dark .user-avatar { background: #444; }
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.user-name {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.user-desc {
+  font-size: 24rpx;
+}
+
+.user-arrow {
+  font-size: 40rpx;
+  color: #999;
+}
+
+.section {
+  border-radius: 20rpx;
+  padding: 24rpx 28rpx 28rpx;
+  margin-bottom: 28rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.theme-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.theme-option {
+  flex: 1;
+  min-width: 180rpx;
+  padding: 24rpx 20rpx;
+  border-radius: 16rpx;
+  text-align: center;
+}
+
+.theme-name {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.theme-desc {
+  display: block;
+  font-size: 22rpx;
+}
+
+.menu-list {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 28rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-label {
+  font-size: 28rpx;
+}
+
+.menu-arrow {
+  font-size: 36rpx;
+  color: #999;
+}
+
+.footer {
+  text-align: center;
+  padding: 48rpx 0 32rpx;
+}
+
+.version {
+  font-size: 24rpx;
+}

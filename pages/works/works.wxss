@@ -1,12 +1,12 @@
-/* 作品分享 - 清新风格 */
-page {
-  background: #f2f8f6;
-}
-
+/* 作品分享 - 多皮肤 */
 .container {
   padding: 36rpx 32rpx 56rpx;
   min-height: 100vh;
 }
+
+.theme-default .container { background: #f0f2f5; }
+.theme-dark .container { background: #1a1a1a; }
+.theme-mint .container { background: #f2f8f6; }
 
 .page-desc {
   display: block;
@@ -90,3 +90,19 @@ page {
   padding: 10rpx 20rpx;
   border-radius: 24rpx;
 }
+
+.theme-default .page-desc { color: #666; }
+.theme-default .work-card { box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.06); }
+.theme-default .work-card::before { background: #07c160; }
+.theme-default .work-title { color: #333; }
+.theme-default .work-desc { color: #555; }
+.theme-default .work-time { color: #999; }
+.theme-default .tag { color: #07c160; background: rgba(7,193,96,0.1); }
+
+.theme-dark .page-desc { color: #b0b0b0; }
+.theme-dark .work-card { background: #2d2d2d; box-shadow: none; border: 2rpx solid #3d3d3d; }
+.theme-dark .work-card::before { background: #5ebaa8; }
+.theme-dark .work-title { color: #fff; }
+.theme-dark .work-desc { color: #b0b0b0; }
+.theme-dark .work-time { color: #666; }
+.theme-dark .tag { color: #7ec8b5; background: rgba(126,200,181,0.2); }

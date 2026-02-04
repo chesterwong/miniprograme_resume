@@ -1,17 +1,21 @@
 // app.ts
+const THEME_KEY = 'app_theme'
+
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+    theme: 'default' as 'default' | 'dark' | 'mint',
+  },
   onLaunch() {
-    // 展示本地存储能力
+    const saved = wx.getStorageSync(THEME_KEY) as string | undefined
+    if (saved === 'dark' || saved === 'mint' || saved === 'default') {
+      this.globalData.theme = saved
+    }
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-    // 登录
     wx.login({
       success: res => {
         console.log(res.code)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
       },
     })
   },

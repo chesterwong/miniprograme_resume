@@ -135,3 +135,26 @@ page {
   font-size: 22rpx;
   color: #333;
 }
+
+/* 首页皮肤 */
+.theme-dark .page { background: #1a1a1a; }
+.theme-dark .content { background: #2d2d2d; box-shadow: none; }
+.theme-dark .tabs { background: #252525; border-color: #444; }
+.theme-dark .tab-item { color: #b0b0b0; }
+.theme-dark .tab-item.active { color: #7ec8b5; background: #2d2d2d; border-color: #7ec8b5; }
+.theme-dark .panel-title,
+.theme-dark .skill-text { color: #e8e8e8; }
+.theme-dark .skill-dot { color: #7ec8b5; }
+.theme-dark .bottom-menu { background: #1a1a1a; box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.3); }
+.theme-dark .menu-label { color: #e8e8e8; }
+
+.theme-mint .page { background: #f2f8f6; }
+.theme-mint .content { background: #fff; box-shadow: 0 8rpx 32rpx rgba(94,186,168,0.08); }
+.theme-mint .tabs { background: #f0f7f4; border-color: #c8e4dc; }
+.theme-mint .tab-item { color: #5a726c; }
+.theme-mint .tab-item.active { color: #4a9b88; background: #fff; border-color: #7ec8b5; }
+.theme-mint .panel-title,
+.theme-mint .skill-text { color: #2d4a44; }
+.theme-mint .skill-dot { color: #7ec8b5; }
+.theme-mint .bottom-menu { background: #fff; box-shadow: 0 -4rpx 20rpx rgba(94,186,168,0.1); }
+.theme-mint .menu-label { color: #2d4a44; }

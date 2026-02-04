@@ -1,5 +1,16 @@
-<navigation-bar title="作品分享" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<view class="container">
-  <text class="title">作品分享</text>
-  <text class="desc">展示 Chester 的项目与作品，可后续接入列表或详情页。</text>
+<navigation-bar title="作品分享" back="{{true}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : '#FFF'}}"></navigation-bar>
+<view class="container theme-{{theme}}">
+  <text class="page-desc">王驰（Chester）的项目与作品，涵盖小程序、云开发、H5 与后台前端。</text>
+  <view class="works-list">
+    <view class="work-card" wx:for="{{worksList}}" wx:key="id">
+      <view class="work-header">
+        <text class="work-title">{{item.title}}</text>
+        <text class="work-time">{{item.time}}</text>
+      </view>
+      <text class="work-desc">{{item.desc}}</text>
+      <view class="work-tags">
+        <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+      </view>
+    </view>
+  </view>
 </view>

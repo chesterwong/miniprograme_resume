@@ -1,5 +1,15 @@
-<navigation-bar title="学习履历" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<view class="container">
-  <text class="title">学习履历</text>
-  <text class="desc">记录 Chester 的学习经历、证书与成长轨迹。</text>
+<navigation-bar title="学习履历" back="{{true}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : '#FFF'}}"></navigation-bar>
+<view class="container theme-{{theme}}">
+  <text class="page-desc">王驰（Chester）的学习经历与成长轨迹，从 Web 前端到小程序与全栈实践。</text>
+  <view class="timeline">
+    <view class="timeline-item" wx:for="{{resumeList}}" wx:key="id">
+      <view class="timeline-dot"></view>
+      <view class="timeline-line" wx:if="{{index < resumeList.length - 1}}"></view>
+      <view class="timeline-content">
+        <text class="timeline-time">{{item.time}}</text>
+        <text class="timeline-title">{{item.title}}</text>
+        <text class="timeline-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
 </view>

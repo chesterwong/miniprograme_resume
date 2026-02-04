@@ -9,10 +9,35 @@ const BANNER_LIST = [
   { url: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800' },
 ]
 
+const FRONT_END_ITEMS = [
+  '微信小程序：WXML、WXSS、WXS、Skyline / Glass-easel',
+  '前端基础：HTML5、CSS3、JavaScript、TypeScript',
+  '框架：Vue 2/3、React、小程序自定义组件与分包',
+  '工程化：npm、构建流程、样式预处理（Less）',
+  '交互与性能：骨架屏、懒加载、首屏优化',
+]
+const BACK_END_ITEMS = [
+  'Node.js：Express / Koa、RESTful API 设计',
+  '微信云开发：云函数、云数据库、云存储',
+  '后端语言：Java、Python 基础，接口联调',
+  '微服务：网关、鉴权、日志与监控',
+  '运维：Linux 基础、Docker、CI/CD 基础',
+]
+const SQL_ITEMS = [
+  '关系型：MySQL、SQL 编写与索引优化',
+  '云数据库：微信云开发 NoSQL、聚合查询',
+  '缓存：Redis 缓存策略与 Session',
+  '文档型：MongoDB 基础与简单 CRUD',
+]
+
 Component({
   data: {
+    theme: 'default' as string,
     bannerList: BANNER_LIST,
     activeTab: 0,
+    frontEndItems: FRONT_END_ITEMS,
+    backEndItems: BACK_END_ITEMS,
+    sqlItems: SQL_ITEMS,
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',
@@ -20,6 +45,13 @@ Component({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+  },
+  pageLifetimes: {
+    show() {
+      const app = getApp<IAppOption>()
+      const theme = app.globalData.theme || 'default'
+      this.setData({ theme })
+    },
   },
   methods: {
     onTabTap(e: WechatMiniprogram.TouchEvent) {

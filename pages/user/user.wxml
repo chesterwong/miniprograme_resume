@@ -1,5 +1,57 @@
-<navigation-bar title="用户中心" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<view class="container">
-  <text class="title">用户中心</text>
-  <text class="desc">个人设置、账号与偏好管理。</text>
+<navigation-bar title="用户中心" back="{{true}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : '#FFF'}}"></navigation-bar>
+<view class="container theme-{{theme}}">
+  <!-- 用户信息 -->
+  <view class="user-block" bindtap="onUserInfo">
+    <image class="user-avatar" src="{{userInfo.avatarUrl || defaultAvatar}}" mode="aspectFill" />
+    <view class="user-info">
+      <text class="user-name">{{userInfo.nickName}}</text>
+      <text class="user-desc">点击完善资料</text>
+    </view>
+    <text class="user-arrow">›</text>
+  </view>
+
+  <!-- 样式/皮肤 -->
+  <view class="section">
+    <view class="section-title">样式</view>
+    <view class="theme-options">
+      <view
+        class="theme-option {{theme === item.id ? 'active' : ''}}"
+        wx:for="{{themeList}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="onThemeSelect"
+      >
+        <text class="theme-name">{{item.name}}</text>
+        <text class="theme-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置列表 -->
+  <view class="section">
+    <view class="section-title">设置</view>
+    <view class="menu-list">
+      <view class="menu-item" bindtap="onNotify">
+        <text class="menu-label">通知设置</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="onPrivacy">
+        <text class="menu-label">隐私与安全</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="onAbout">
+        <text class="menu-label">关于我们</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      <view class="menu-item" bindtap="onClearCache">
+        <text class="menu-label">清除缓存</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 版本 -->
+  <view class="footer">
+    <text class="version">版本 {{version}}</text>
+  </view>
 </view>

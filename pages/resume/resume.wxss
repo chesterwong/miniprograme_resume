@@ -1,12 +1,12 @@
-/* 学习履历 - 清新风格 */
-page {
-  background: #f2f8f6;
-}
-
+/* 学习履历 - 多皮肤 */
 .container {
   padding: 36rpx 32rpx 56rpx;
   min-height: 100vh;
 }
+
+.theme-default .container { background: #f0f2f5; }
+.theme-dark .container { background: #1a1a1a; }
+.theme-mint .container { background: #f2f8f6; }
 
 .page-desc {
   display: block;
@@ -100,3 +100,22 @@ page {
   color: #5a726c;
   line-height: 1.68;
 }
+
+.theme-default .page-desc { color: #666; }
+.theme-default .timeline-content { box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.06); }
+.theme-default .timeline-content::before { background: #07c160; }
+.theme-default .timeline-time { color: #07c160; background: rgba(7,193,96,0.1); }
+.theme-default .timeline-title { color: #333; }
+.theme-default .timeline-desc { color: #555; }
+.theme-default .timeline-dot { background: #07c160; }
+.theme-default .timeline-line { background: #e8e8e8; }
+
+.theme-dark .page-desc { color: #b0b0b0; }
+.theme-dark .timeline-content { background: #2d2d2d; box-shadow: none; border: 2rpx solid #3d3d3d; }
+.theme-dark .timeline-content::before { background: #5ebaa8; }
+.theme-dark .timeline-time { color: #7ec8b5; background: rgba(126,200,181,0.2); }
+.theme-dark .timeline-title { color: #fff; }
+.theme-dark .timeline-desc { color: #b0b0b0; }
+.theme-dark .timeline-dot { background: #5ebaa8; border-color: #1a1a1a; }
+.theme-dark .timeline-line { background: #444; }
+.theme-dark .timeline-dot { border-color: #1a1a1a; }

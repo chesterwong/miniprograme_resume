@@ -1,7 +1,13 @@
+/* 个人介绍 - 多皮肤 */
 .container {
   padding: 32rpx;
   padding-bottom: 48rpx;
+  min-height: 100vh;
 }
+
+.theme-default .container { background: #f0f2f5; }
+.theme-dark .container { background: #1a1a1a; }
+.theme-mint .container { background: #f2f8f6; }
 
 .intro {
   display: block;
@@ -11,6 +17,9 @@
   margin-bottom: 32rpx;
 }
 
+.theme-dark .intro { color: #e8e8e8; }
+.theme-mint .intro { color: #2d4a44; }
+
 .tabs {
   display: flex;
   border-bottom: 2rpx solid #eee;
@@ -18,6 +27,9 @@
   border-radius: 12rpx 12rpx 0 0;
   overflow: hidden;
 }
+
+.theme-dark .tabs { background: #252525; border-color: #444; }
+.theme-mint .tabs { background: #f0f7f4; border-color: #c8e4dc; }
 
 .tab-item {
   flex: 1;
@@ -35,6 +47,11 @@
   margin-bottom: -2rpx;
 }
 
+.theme-dark .tab-item { color: #b0b0b0; }
+.theme-dark .tab-item.active { color: #7ec8b5; background: #2d2d2d; border-color: #7ec8b5; }
+.theme-mint .tab-item { color: #5a726c; }
+.theme-mint .tab-item.active { color: #4a9b88; background: #fff; border-color: #7ec8b5; }
+
 .tab-panels {
   background: #fff;
   border: 2rpx solid #eee;
@@ -43,11 +60,8 @@
   padding: 32rpx 28rpx 40rpx;
 }
 
-.tab-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
-}
+.theme-dark .tab-panels { background: #2d2d2d; border-color: #444; }
+.theme-mint .tab-panels { background: #fff; border-color: #c8e4dc; box-shadow: 0 8rpx 32rpx rgba(94,186,168,0.08); }
 
 .panel-title {
   font-size: 32rpx;
@@ -55,6 +69,9 @@
   color: #333;
   margin-bottom: 16rpx;
 }
+
+.theme-dark .panel-title { color: #fff; }
+.theme-mint .panel-title { color: #2d4a44; }
 
 .skill-list {
   display: flex;
@@ -75,8 +92,13 @@
   flex-shrink: 0;
 }
 
+.theme-dark .skill-dot { color: #7ec8b5; }
+
 .skill-text {
   font-size: 26rpx;
   color: #555;
   line-height: 1.55;
 }
+
+.theme-dark .skill-text { color: #b0b0b0; }
+.theme-mint .skill-text { color: #5a726c; }

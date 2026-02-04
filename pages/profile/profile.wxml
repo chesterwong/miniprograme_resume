@@ -1,5 +1,38 @@
-<navigation-bar title="个人介绍" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<view class="container">
-  <text class="title">个人介绍</text>
-  <text class="desc">这里是 Chester 的个人介绍，可在此展示简介、技能与联系方式等。</text>
+<navigation-bar title="个人介绍" back="{{true}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : '#FFF'}}"></navigation-bar>
+<view class="container theme-{{theme}}">
+  <text class="intro">{{ intro }}</text>
+  <view class="tabs">
+    <view class="tab-item {{activeTab === 0 ? 'active' : ''}}" data-index="0" bindtap="onTabTap">Front End</view>
+    <view class="tab-item {{activeTab === 1 ? 'active' : ''}}" data-index="1" bindtap="onTabTap">Back End</view>
+    <view class="tab-item {{activeTab === 2 ? 'active' : ''}}" data-index="2" bindtap="onTabTap">SQL</view>
+  </view>
+  <view class="tab-panels">
+    <view class="tab-panel" wx:if="{{activeTab === 0}}">
+      <text class="panel-title">Front End</text>
+      <view class="skill-list">
+        <view class="skill-item" wx:for="{{frontEndItems}}" wx:key="*this">
+          <text class="skill-dot">·</text>
+          <text class="skill-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="tab-panel" wx:if="{{activeTab === 1}}">
+      <text class="panel-title">Back End</text>
+      <view class="skill-list">
+        <view class="skill-item" wx:for="{{backEndItems}}" wx:key="*this">
+          <text class="skill-dot">·</text>
+          <text class="skill-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="tab-panel" wx:if="{{activeTab === 2}}">
+      <text class="panel-title">SQL</text>
+      <view class="skill-list">
+        <view class="skill-item" wx:for="{{sqlItems}}" wx:key="*this">
+          <text class="skill-dot">·</text>
+          <text class="skill-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
