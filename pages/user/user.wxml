@@ -31,6 +31,10 @@
   <view class="section">
     <view class="section-title">设置</view>
     <view class="menu-list">
+      <button class="menu-item menu-item-btn" open-type="share">
+        <text class="menu-label">分享给好友</text>
+        <text class="menu-arrow">›</text>
+      </button>
       <view class="menu-item" bindtap="onNotify">
         <text class="menu-label">通知设置</text>
         <text class="menu-arrow">›</text>

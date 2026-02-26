@@ -3,6 +3,25 @@ page {
   background: #f0f2f5;
 }
 
+.nav-share-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16rpx;
+  height: 100%;
+}
+.nav-share-btn {
+  border: none;
+  background: transparent;
+  font-size: 28rpx;
+  color: inherit;
+  padding: 16rpx 24rpx;
+  line-height: 1;
+}
+.nav-share-btn::after {
+  border: none;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -91,6 +110,81 @@ page {
   font-size: 34rpx;
   font-weight: 600;
   color: #333;
+}
+
+.tech-capability-row {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  margin-bottom: 8rpx;
+}
+.tech-capability-label {
+  font-size: 28rpx;
+  color: #666;
+}
+.tech-capability-btn {
+  padding: 12rpx 28rpx;
+  font-size: 26rpx;
+  color: #07c160;
+  background: rgba(7, 193, 96, 0.1);
+  border: 2rpx solid #07c160;
+  border-radius: 12rpx;
+  line-height: 1.2;
+}
+.tech-capability-btn::after {
+  border: none;
+}
+
+.dify-row {
+  margin-bottom: 16rpx;
+}
+.dify-btn {
+  width: 100%;
+}
+.dify-result-wrap {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12rpx;
+}
+.theme-dark .dify-result-wrap {
+  background: rgba(255, 255, 255, 0.06);
+}
+.dify-result-label {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 12rpx;
+}
+.theme-dark .dify-result-label {
+  color: #888;
+}
+.dify-result-scroll {
+  max-height: 320rpx;
+  font-size: 22rpx;
+  color: #333;
+  line-height: 1.5;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.theme-dark .dify-result-scroll {
+  color: #e8e8e8;
+}
+.dify-error {
+  font-size: 24rpx;
+  color: #ee0a24;
+  display: block;
+  word-break: break-all;
+}
+.dify-thinking-label {
+  margin-top: 16rpx;
+}
+.dify-thinking {
+  color: #666;
+  font-size: 24rpx;
+}
+.theme-dark .dify-thinking {
+  color: #999;
 }
 
 .panel-desc {

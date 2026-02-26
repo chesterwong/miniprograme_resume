@@ -41,4 +41,7 @@ Page({
       this.setData({ activeTab: index })
     }
   },
+  onShareAppMessage() {
+    return { title: '王驰 Chester - 个人介绍', path: '/pages/index/index' }
+  },
 })

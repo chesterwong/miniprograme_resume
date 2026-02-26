@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<navigation-bar title="Chester's resume" back="{{false}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : (theme === 'mint' ? '#fff' : '#FFF')}}"></navigation-bar>
-
+<navigation-bar title="Chester's resume" back="{{false}}" color="{{theme === 'dark' ? '#fff' : 'black'}}" background="{{theme === 'dark' ? '#1a1a1a' : (theme === 'mint' ? '#fff' : '#FFF')}}">
+</navigation-bar>
 <view class="page theme-{{theme}}">
   <!-- Header: 轮播 -->
   <view class="header">
@@ -32,6 +32,29 @@
     <view class="tab-panels">
       <view class="tab-panel" wx:if="{{activeTab === 0}}">
         <text class="panel-title">Front End</text>
+        <!-- <view class="tech-capability-row">
+          <text class="tech-capability-label">技术能力：{{techCapability}}</text>
+          <button class="tech-capability-btn" bindtap="handlePlus">+1</button>
+        </view> -->
+        <view class="dify-row">
+          <button class="tech-capability-btn dify-btn" bindtap="fetchDify" disabled="{{difyLoading}}">{{difyLoading ? '请求中…' : '获取 Dify 数据'}}</button>
+        </view>
+        <view class="dify-result-wrap" wx:if="{{difyError}}">
+          <text class="dify-result-label">错误</text>
+          <text class="dify-result-text dify-error">{{difyError}}</text>
+        </view>
+        <view class="dify-result-wrap" wx:if="{{difyResult && !difyError}}">
+          <block wx:if="{{difyText || difyThinking}}">
+            <text class="dify-result-label" wx:if="{{difyText}}">回复</text>
+            <scroll-view class="dify-result-scroll" scroll-y wx:if="{{difyText}}">{{difyText}}</scroll-view>
+            <text class="dify-result-label dify-thinking-label" wx:if="{{difyThinking}}">思考过程</text>
+            <scroll-view class="dify-result-scroll dify-thinking" scroll-y wx:if="{{difyThinking}}">{{difyThinking}}</scroll-view>
+          </block>
+          <block wx:else>
+            <text class="dify-result-label">接口数据</text>
+            <scroll-view class="dify-result-scroll" scroll-y>{{difyResult}}</scroll-view>
+          </block>
+        </view>
         <view class="skill-list">
           <view class="skill-item" wx:for="{{frontEndItems}}" wx:key="*this">
             <text class="skill-dot">·</text>

@@ -30,9 +30,19 @@ const SQL_ITEMS = [
   '文档型：MongoDB 基础与简单 CRUD',
 ]
 
+// 本地/自建 Dify 请改为你的 base + 路径，并在小程序后台配置 request 合法域名
+const DIFY_WORKFLOW_URL = 'https://api.dify.ai/v1/workflows/run'
+const DIFY_API_KEY = 'app-WujD2Rlofu2g9oPBW551IH21'
+
 Component({
   data: {
     theme: 'default' as string,
+    techCapability: 0,
+    difyLoading: false,
+    difyResult: '',
+    difyText: '',
+    difyThinking: '',
+    difyError: '',
     bannerList: BANNER_LIST,
     activeTab: 0,
     frontEndItems: FRONT_END_ITEMS,
@@ -54,6 +64,51 @@ Component({
     },
   },
   methods: {
+    handlePlus() {
+      this.setData({ techCapability: this.data.techCapability + 1 })
+    },
+    fetchDify() {
+      this.setData({ difyLoading: true, difyError: '', difyResult: '', difyText: '', difyThinking: '' })
+      wx.request({
+        url: DIFY_WORKFLOW_URL,
+        method: 'POST',
+        header: {
+          'Authorization': `Bearer ${DIFY_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        data: {
+          inputs: {
+            content: ''
+          },
+          response_mode: 'blocking',
+          user: 'abc-123',
+        },
+        success: (res) => {
+          const data = res.data as Record<string, unknown>
+          const str = typeof data === 'object' ? JSON.stringify(data, null, 2) : String(data)
+          let difyText = ''
+          let difyThinking = ''
+          const outputs = (data?.data as Record<string, unknown>)?.outputs as Record<string, unknown> | undefined
+          if (outputs) {
+            const textVal = outputs.text ?? outputs.Text
+            const thinkVal = outputs['<think>'] ?? outputs.think
+            difyText = typeof textVal === 'string' ? textVal : ''
+            difyThinking = typeof thinkVal === 'string' ? thinkVal : ''
+            if (!difyThinking && difyText) {
+              const match = difyText.match(/<think>([\s\S]*?)<\/think>/i)
+              if (match) difyThinking = match[1].trim()
+            }
+          }
+          this.setData({ difyResult: str, difyText, difyThinking, difyLoading: false })
+        },
+        fail: (err) => {
+          this.setData({
+            difyError: err.errMsg || '请求失败',
+            difyLoading: false,
+          })
+        },
+      })
+    },
     onTabTap(e: WechatMiniprogram.TouchEvent) {
       const index = Number((e.currentTarget as WechatMiniprogram.Target).dataset.index)
       if (typeof index !== 'number' || index < 0 || index > 2) return
@@ -86,6 +141,12 @@ Component({
           this.setData({ userInfo: res.userInfo, hasUserInfo: true })
         },
       })
+    },
+    onShareAppMessage(): WechatMiniprogram.Page.ICustomOption {
+      return {
+        title: "王驰 Chester 的个人简历 - 微信小程序",
+        path: "/pages/index/index",
+      }
     },
   },
 })

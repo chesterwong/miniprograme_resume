@@ -142,6 +142,25 @@
   border-bottom: 2rpx solid #f0f0f0;
 }
 
+.menu-item-btn {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  line-height: inherit;
+}
+.menu-item-btn::after {
+  border: none;
+}
+.theme-dark .menu-item-btn {
+  background: transparent;
+}
+.theme-mint .menu-item-btn {
+  background: transparent;
+}
+
 .menu-item:last-child {
   border-bottom: none;
 }

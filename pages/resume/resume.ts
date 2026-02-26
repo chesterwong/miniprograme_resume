@@ -35,4 +35,7 @@ Page({
     const app = getApp<IAppOption>()
     this.setData({ theme: app.globalData.theme || 'default' })
   },
+  onShareAppMessage() {
+    return { title: '王驰 Chester - 学习履历', path: '/pages/index/index' }
+  },
 })

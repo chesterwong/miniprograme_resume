@@ -68,4 +68,7 @@ Page({
       },
     })
   },
+  onShareAppMessage() {
+    return { title: '王驰 Chester 的个人简历 - 微信小程序', path: '/pages/index/index' }
+  },
 })
