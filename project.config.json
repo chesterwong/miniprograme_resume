@@ -5,7 +5,8 @@
     "minified": true,
     "uglifyFileName": false,
     "enhance": true,
-    "packNpmRelationList": [],
+    "packNpmRelationList": [{"packageJsonPath": "./package.json", "miniprogramNpmDistDir": "./"}],
+    "packNpmManually": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

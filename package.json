@@ -1,0 +1,9 @@
+{
+  "name": "miniprograme-resume",
+  "version": "1.0.0",
+  "dependencies": {
+    "echarts": "^5.4.3",
+    "echarts-for-weixin": "^1.0.2",
+    "threejs-miniprogram": "^0.0.8"
+  }
+}

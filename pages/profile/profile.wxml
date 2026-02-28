@@ -9,6 +9,18 @@
   <view class="tab-panels">
     <view class="tab-panel" wx:if="{{activeTab === 0}}">
       <text class="panel-title">Front End</text>
+      <!-- 3D 人形区域 -->
+      <view class="section-3d">
+        <text class="section-3d-title">3D 人形模型 (Mock)</text>
+        <view class="canvas-3d-wrap">
+          <canvas type="webgl" id="webgl-human" class="canvas-3d" style="width: {{canvas3dSize}}px; height: {{canvas3dSize}}px;"></canvas>
+          <view class="human-stats">
+            <text>技能匹配度: 85%</text>
+            <text>活跃度: 92</text>
+            <text>完成度: 78</text>
+          </view>
+        </view>
+      </view>
       <view class="skill-list">
         <view class="skill-item" wx:for="{{frontEndItems}}" wx:key="*this">
           <text class="skill-dot">·</text>

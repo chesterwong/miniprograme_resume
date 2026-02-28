@@ -55,6 +55,44 @@
             <scroll-view class="dify-result-scroll" scroll-y>{{difyResult}}</scroll-view>
           </block>
         </view>
+        <!-- 柱状图区域 -->
+        <view class="chart-section">
+          <text class="chart-section-title">技能数据统计 (Mock)</text>
+          <view class="bar-chart-wrap">
+            <canvas canvas-id="bar-chart" id="bar-chart" class="bar-chart-canvas" style="width: {{barChartWidth}}px; height: {{barChartHeight}}px;"></canvas>
+          </view>
+        </view>
+        <!-- 地图区域：使用微信原生 map 组件 -->
+        <view class="chart-section">
+          <text class="chart-section-title">地域分布 (Mock)</text>
+          <view class="map-wrap">
+            <map
+              id="region-map"
+              longitude="{{mapCenter.longitude}}"
+              latitude="{{mapCenter.latitude}}"
+              scale="{{mapScale}}"
+              markers="{{mapMarkers}}"
+              include-points="{{mapIncludePoints}}"
+              show-scale="{{true}}"
+              enable-zoom="{{true}}"
+              enable-scroll="{{true}}"
+              bindmarkertap="onMapMarkerTap"
+            />
+          </view>
+        </view>
+        <view class="chart-section">
+          <text>
+             =============================
+            </text>
+          <text class="chart-section-title">#3D模型小人使用Three.js#</text>
+          <view class="bar-chart-wrap">
+            
+            看效果，请点击页面中的"个人介绍"
+            <text>
+             =============================
+            </text>
+          </view>
+        </view>
         <view class="skill-list">
           <view class="skill-item" wx:for="{{frontEndItems}}" wx:key="*this">
             <text class="skill-dot">·</text>

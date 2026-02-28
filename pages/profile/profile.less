@@ -80,3 +80,43 @@
   color: #555;
   line-height: 1.55;
 }
+
+/* 3D 人形区域（避免父级 overflow:hidden，profile 页 tab-panels 无 overflow 限制） */
+.section-3d {
+  margin-top: 20rpx;
+  padding: 24rpx;
+  background: #f8f9fa;
+  border-radius: 12rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.section-3d-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.section-3d .canvas-3d-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.canvas-3d {
+  flex-shrink: 0;
+  display: block;
+  background: #e8eaed;
+  border-radius: 12rpx;
+}
+
+.human-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  font-size: 24rpx;
+  color: #555;
+}
